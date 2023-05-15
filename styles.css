@@ -1,0 +1,264 @@
+/*Color Palette:
+	#4D4646
+	#5B5656
+	#7FCD91
+	#F5EAEA
+*/
+html{
+	--link-color: #5B5656;
+	--moodify-green: #7FCD91;
+}
+/*FONTS
+-------------------------------/
+/*Logo font*/
+@font-face{
+	font-family: 'MoodifyFont';
+	src: url("GothamMedium.ttf");
+}
+/*info bar font*/
+@font-face{
+	font-family: 'Book';
+	src: url("GothamBook.ttf");
+}
+/*Artist name font*/
+@font-face{
+	font-family: 'ArtistName';
+	src: url("GothamBold.ttf");
+}
+/*Link font*/
+@font-face{
+	font-family: 'Light';
+	src: url("GothamLight.ttf");
+}
+/*Info font */
+@font-face{
+	font-family: 'LightItalic';
+	src: url("GothamLightItalic.ttf");
+}
+@font-face{
+	font-family: 'Mondapick';
+	src: url("MondapickThin.ttf");
+}
+/*Sexy font*/
+@font-face{
+	font-family: 'SexyFont';
+	src: url("Back to Black Bold Demo.ttf");
+}
+/*Depressed font*/
+@font-face{
+	font-family: 'DepressedFont';
+	src: url("PleaseDontLeave.ttf");
+}
+/*Angry font*/
+@font-face{
+	font-family: 'AngryFont';
+	src: url("chaos.ttf");
+}
+/*Energized font*/
+@font-face{
+	font-family: 'EnergizeFont';
+	src: url("sunny-spells.otf");
+}
+/*Calm font*/
+@font-face{
+	font-family: 'CalmFont';
+	src: url("easy-calm.otf");
+}
+/*MAIN*/
+#canvas-basic{
+    z-index: 1;
+}
+.sidebar, .content, .welcome{
+	position: absolute;
+	z-index: 2;
+}
+body{
+	background: #000;
+	margin: 0px auto;
+}
+a, .title{
+	text-decoration: none;
+	color: var(--link-color);
+	font-family: 'Light';
+}
+i, a:hover, .logo{
+	color:var(--moodify-green);
+}
+.content{
+	position: relative;
+	background-color: #4D4646;
+	min-height: 100vh;
+	width: 900px;
+	margin-left: 250px;
+}
+#side_nav{
+	background: #000;
+	position: fixed;
+	min-width: 250px;
+	width: 250px;
+	padding: 0px;
+	height: 100vh;
+	margin-left: auto;
+}
+h2{
+	font-family: 'Book';
+}
+.names{
+	font-family: 'LightItalic';
+	color: #F5EAEA;
+}
+.legal{
+	margin-top: 100%;
+}
+.list-unstyled a{
+	font-size: 25px;
+}
+.li{
+	padding-left: 3px;
+}
+.info-bar{
+	color: #F5EAEA;
+	background: #5B5656;
+	border-radius: 10px;
+	width: 500px;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	font-family: 'Book';
+}
+p{
+	font-family: 'Mondapick';
+	padding: 2px;
+	margin: 0px 4px;
+}
+.logo, h1{
+	font-family: 'MoodifyFont';
+	font-size: 30px;
+}
+.artist{
+	position: relative;
+	text-align: center;
+	color: white;
+}
+.artist-name{
+	position: absolute;
+	bottom: -28px;
+	font-size: 121px;
+	left: 19px;
+	font-family: 'ArtistName';
+}
+.lyrics{
+	font-size: 14px;
+	text-align: center;
+}
+.lyrics a{
+	color: var(--link-color);
+	font-weight: bold;
+}
+.iframe1{
+	margin-left: auto;
+}
+.iframe1 iframe, .iframe2 iframe{
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+	position: absolute; 
+	border: 0;
+}
+.iframe1, .iframe2{
+	right: 0; 
+	width: 55%; 
+	height: 80px; 
+	position: relative;
+}
+#recommended{
+	margin-bottom: 30px;
+}
+/*Home page*/
+.welcome{
+	padding: 10px;
+	width: 600px;
+	background: black;
+	margin-top: 100px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	border-radius: 10px;
+}
+.welcome img{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.welcome h1{
+	color: white;
+}
+.welcome p{
+	color: #4D4646;
+}
+.form-select{
+	width: 400px;
+	font-family: 'Book';
+}
+.btn-primary{
+	background-color: var(--link-color);
+	border: black;
+	font-family: 'LightItalic';
+}
+.btn-primary:hover{
+	background-color: var(--moodify-green);
+}
+#please{
+	display: none;
+	color: red;
+}
+#input{
+	width: 120px;
+}
+/*MOOD STYLES*/
+#angry-mood, #depressed-mood, #energize-mood, #calm-mood, #sexy-mood{
+	font-size: 30px;
+}
+/*Sexy*/
+#sexy-mood{
+	color: #E96479;
+	font-family: 'SexyFont';
+}
+#nao{
+	background-color: #E96479;
+}
+/*Calm*/
+#calm-mood{
+	color: #AFD3E2;
+	font-family: 'CalmFont';
+}
+#agustd{
+	background-color: #AFD3E2;
+}
+/*Angry*/
+#angry-mood{
+	color: #DC3535;
+	font-family: 'AngryFont';
+}
+#rage{
+	background-color: #DC3535;
+}
+/*Depressed*/
+#depressed-mood{
+	color: #0C134F;
+	font-family: 'DepressedFont';
+	font-weight: bold;
+}
+#therose{
+	background-color: #0C134F;
+	color: white;
+}
+/*Energized*/
+#energize-mood{
+	font-family: 'EnergizeFont';
+	color: #FFD93D;
+}
+#astro{
+	background-color: #FFD93D;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sexy</title>
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- Our styles -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/b1b7d54795.js" crossorigin="anonymous"></script>
+    <style>
+      #canvas-basic {
+        position: fixed;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container d-flex ">
+      <!-- Granim.js -->
+      <canvas id="canvas-basic"> </canvas>
+      <script src="granim.min.js"></script>
+
+      <!-- Sidebar Navigation -->
+      <div class="sidebar" id="side_nav">
+        <div class="header-box px-3 pt-3 pb-4">
+          <h1 class="fs-4">
+            <img class="img-fluid" src="Asset 1.svg" width="50" height="50">
+            <span class="logo">Moodify</span>
+          </h1>
+        </div>
+
+        <ul class="list-unstyled px-4">
+          <li><a href="index.html" class="text-decoration-none">
+            <i class="fa-solid fa-house"></i>  Home</a>
+          </li>
+          <li><a href="#" class="text-decoration-none" onclick="openLink()">
+            <i class="fa-solid fa-shuffle"></i>  Randomize</a>
+          </li>
+        </ul>
+
+        <!-- Credits and our names -->
+        <ul class="list-unstyled px-2 legal">
+          <li><a href="#" class="text-decoration-none">Credits</a>
+          </li>
+          <div class="title mt-5">
+            Designed & Developed by
+          </div>
+          <div class="names ms-3">
+          Leah Chagnon<br>Dylan Effe-Hoy<br>Teresa Lizaola<br>Nicole Prasertsit<br>Adalin Romero            
+          </div>
+          <div class="mt-3 logo">Moodify 2023</div>
+        </ul>
+      </div>
+
+      <!-- Actual content -->
+        <div class="content">
+          <div class="info-bar mt-3">
+            <div>Since you're feeling <span id="sexy-mood">"sexy"</span>, listen to:</div>
+          </div>
+
+          <!-- Arist name and picture -->
+          <div class="row artist">
+           <div class="col">
+             <img src="nao.jpg">
+             <div class="artist-name">
+               NAO
+             </div>
+           </div>
+          </div>
+
+          <!-- Artist Bio -->
+          <div id="nao" class="col-12 artist-bio">
+             <p>NAO is a British singer, songwriter, and producer. She was born on November 29, 1987, in East London, United Kingdom. Nao's music is a blend of electronic, R&B, and funk, with soulful vocals and catchy melodies. She first gained attention with her debut EP "So Good" in 2014, and since then has released two full-length albums, "For All We Know" in 2016 and "Saturn" in 2018. Nao has been praised for her unique style and powerful live performances, and has collaborated with artists such as Disclosure, Mura Masa, and Little Simz.</p>
+           </div>
+
+          <!--  Lyrics and main song -->
+          <section id="mood-song">
+            <div class="row">
+              <div class="col-5 pe-1 mt-3">
+                <!-- Embed: add https to the beginning of the link -->
+                <!-- change height to 500px -->
+                <!-- change link to be around Musicmatch -->
+                <div class="lyrics"><iframe src="//www.musixmatch.com/lyrics/näo-6/Curiosity/embed?theme=dark" style="border:none;background:transparent;" width="100%" height="352px" border="0"></iframe>
+                View Curiosity Lyrics by Nao at <a href="https://www.musixmatch.com/lyrics/näo-6/Curiosity" target="_blank">Musixmatch</a></div>
+                <!-- end of embed -->
+              </div>
+              <div class="col-7 ps-1 mt-3">
+                <!-- start of song embed: color dark  -->
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6j1owOuV2iTquW5vTw1fm3?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <!-- end of embed -->
+              </div>
+            </div>
+          </section>
+
+          <!-- Recommended songs -->
+          <section id="recommended">
+            <div class="row mx-3">
+              <div class="col-12 mt-3">
+               <h2 class="text-center">Check out more songs:</h2>
+              </div>
+              <div class="col">
+                <div class="iframe1">
+                  <!-- start of recommended song 1 embed -->
+                  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5yrXolC7Un3peiFxwqbucn?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+              </div>
+             <div class="col">
+              <div class="iframe2">
+                <!-- start of recommended song 2 embed -->
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5qbSSuBorHMw2wXC3qPe2Z?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
+              <!-- end of embed -->
+            </div>
+          </section>
+          <!-- end of container div -->
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <!-- Granim script -->
+     <script>
+        var granimInstance = new Granim({
+            element: '#canvas-basic',
+            direction: 'left-right',
+            isPausedWhenNotInView: true,
+            states : {
+                "default-state": {
+                    gradients: [
+                        ['#07301e', '#146542'],
+                        ['#1ed760', '#1db954']
+                    ]
+                }
+            }
+        });
+        var links = [
+          "depressed.html",
+          "angry.html",
+          "calm.html",
+          "energize.html"
+          ];
+        
+        // Script for random
+        function openLink(){
+          // Chooses a random link:
+          var i = Math.floor(Math.random() * links.length);
+          parent.location = links[i];
+          return false;
+        }
+      </script>
+  </body>
+</html>

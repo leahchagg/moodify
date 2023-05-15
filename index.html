@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Moodify</title>
+		<link rel="icon" type="image/x-icon" href="favicon.svg">
+		<!-- Bootstrap CSS -->
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	    <!-- Our styles -->
+	    <link rel="stylesheet" type="text/css" href="styles.css">
+	    <!-- Anime.js -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+	    <!-- Font Awesome Icons -->
+	    <script src="https://kit.fontawesome.com/b1b7d54795.js" crossorigin="anonymous"></script>
+	    <!-- Style for Granim & Anime -->
+	    <style>
+	    	#canvas-basic{
+	    		position: fixed;
+	            display: block;
+	            width: 100%;
+	            height: 100%;
+	            top: 0;
+	            right: 0;
+	            bottom: 0;
+	            left: 0;
+	    	}
+	    	#loading{
+	    		margin-top: 20px;
+	        	height: 300px;
+	        	display: none;
+	        	background-color: black;
+	        	background-image: linear-gradient(to bottom right, black, green);
+	        	align-content: center;
+	        	justify-content: center;
+	    	}
+	       	.element{
+	       		display: inline-block;
+				width: 50px;
+				margin-top: auto;
+				margin-bottom: auto;
+				height: 50px;
+				background-color: white;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container d-flex justify-content-center">
+			<!-- Granim.js -->
+			<canvas id="canvas-basic"> </canvas>
+    		<script src="granim.min.js"></script>
+
+    		<div class="welcome">
+    			<img class="img-fluid" src="Asset 1.svg" width="50" height="50"> 
+    			<h1 class="text-center">
+    			Welcome to Moodify</h1>
+    			<p class="text-center">Select your mood to be taken to an artist page</p>
+    			
+
+    			<select id="select" class="form-select mx-auto mt-3" aria-label="Default select example">
+				  <option value="none" selected>I'm feeling</option>
+				  <option value="sexy">Sexy</option>
+				  <option value="depressed">Depressed</option>
+				  <option value="energized">Energized</option>
+				  <option value="calm">Calm</option>
+				  <option value="angry">Angry</option>
+				</select>
+
+				<input id="input" onclick="direct()" class="col-2 d-grid mt-3 mx-auto btn btn-primary" type="submit" value="Generate">
+				
+				<p id="please" class="text-center">Please select a mood</p>
+				<!-- Display loading animation on button click for 3 seconds -->
+				<div id="loading">
+					<!-- element: how many circles there is -->
+					<div class="element"></div>
+					<div class="element"></div>
+					<div class="element"></div>
+					<div class="element"></div>
+					<div class="element"></div>
+				</div>
+    		</div>
+
+	    <script>
+	    	// Granim.js script
+	    	var granimInstance = new Granim({
+	          element: '#canvas-basic',
+	          direction: 'left-right',
+	          isPausedWhenNotInView: true,
+	          states : {
+	              "default-state": {
+	                  gradients: [
+	                      ['#07301e', '#146542'],
+	                      ['#1ed760', '#1db954']
+	                  ]
+	              	}
+	         	}
+	      	});
+
+	      	// Anime.js script
+	      	anime({
+		        targets: '#loading .element',
+		        loop: true,
+		        scale: [
+		          {value: '.1', duration: 2000, easing: 'easeOutSine'},
+		            {value: '1', duration: 2000, easing: 'easeInQuad'}
+		        ],
+		        translateY: [
+		          {value: '-450', duration: 2000, easing: 'easeOutSine'},
+		          {value: '0', duration: 2000, easing: 'easeInQuad'}
+		        ],
+		        delay: anime.stagger(250)
+		    })
+
+		    // OnClick script
+		    var animation = document.getElementById("loading");
+		    var alert = document.getElementById("please");
+		    var selection = document.getElementById("select");
+		    var generate = document.getElementById("input");
+
+			function direct(){
+				// Make sure selection is not base selection we don't want animation playing unless mood selected
+				if (selection.value =="none"){
+					alert.style.display = "block";
+				}
+				else{
+					alert.style.display = "none";
+					// Change button to say generating
+					generate.value = "Generating";
+					// Check display property
+					if (animation.style.display !== "none"){
+						animation.style.display = "flex";
+					}
+					else{
+						animation.style.display = "none";
+					}
+				}
+				// Depending on selection, redirect
+				if(selection.value == "sexy"){
+					setTimeout(sexyURL, 4000);
+				}
+				if(selection.value == "depressed"){
+					setTimeout(depressedURL, 4000);
+				}
+				if(selection.value == "angry"){
+					setTimeout(angryURL, 4000);
+				}
+				if(selection.value == "energized"){
+					setTimeout(energyURL, 4000);
+				}
+				if(selection.value == "calm"){
+					setTimeout(calmURL, 4000);
+				}
+			}
+			// Redirect to urls 
+			function sexyURL(){
+				document.location.href = "sexy.html";
+			}
+			function depressedURL(){
+				document.location.href = "depressed.html";
+			}
+			function angryURL(){
+				document.location.href = "angry.html";
+			}
+			function energyURL(){
+				document.location.href = "energize.html";
+			}
+			function calmURL(){
+				document.location.href = "calm.html";
+			}
+	    </script>
+		</div>
+	</body>
+</html>
